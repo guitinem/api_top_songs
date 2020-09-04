@@ -1,0 +1,28 @@
+{
+    "TableName": "Artist",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "transaction_id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "artist_name",
+            "AttributeType": "S"
+        }
+
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "transaction_id",
+            "KeyType": "HASH"
+        },
+        {
+            "AttributeName": "artist_name",
+            "KeyType": "RANGE"
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+    }
+}
