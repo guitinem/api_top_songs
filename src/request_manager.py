@@ -1,7 +1,7 @@
 from requests import get
 
 URL_BASE = "https://api.genius.com/"
-TOKEN = "JuR2WR4AGw0S5eE_6HxVPNDufQrJeCbUvfnJl13Xy7xFmbkWED4wlxIxDswkIEsf"
+TOKEN = "" # Token Genius Api
 
 
 def search_artist_id(artist: str):
