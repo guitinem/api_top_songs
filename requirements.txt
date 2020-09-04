@@ -2,3 +2,4 @@ Flask==1.1.2
 awscli==1.18.132
 requests==2.24.0
 redis==3.5.3
+boto3==1.14.56
