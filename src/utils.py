@@ -1,7 +1,7 @@
 import re
 
-def get_artist_name(name_artist: str):
-    """Return the name of the artist formtaed
+def get_artist_name_formated(name_artist: str):
+    """Return the name of the artist formated
 
     Args:
         name_artist (str)

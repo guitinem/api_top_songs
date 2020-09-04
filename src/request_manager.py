@@ -49,7 +49,7 @@ def search_top_songs(artist_id: int):
         raise ValueError('Songs not found')
 
     data = response.json()
-    raise ValueError('Songs not found')
+
     try:
         list_songs = [song.get('full_title')
                       for song in data['response']['songs']]
