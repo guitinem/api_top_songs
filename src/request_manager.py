@@ -17,7 +17,7 @@ def search_artist_id(artist: str):
     response = get(URL_BASE + 'search', params=payload, headers=headers)
 
     if (response.status_code != 200):
-        return False
+        raise ValueError('Artist not found')
 
     data = response.json()
 
@@ -25,7 +25,7 @@ def search_artist_id(artist: str):
         artist_id = data['response']['hits'][0].get(
             'result').get('primary_artist').get('id')
     except:
-        artist_id = None
+        raise ValueError('Artist not found')
 
     return artist_id
 
@@ -46,15 +46,15 @@ def search_top_songs(artist_id: int):
     response = get(url, params=payload, headers=headers)
 
     if (response.status_code != 200):
-        return None
+        raise ValueError('Songs not found')
 
     data = response.json()
-
+    raise ValueError('Songs not found')
     try:
         list_songs = [song.get('full_title')
                       for song in data['response']['songs']]
     except Exception as e:
         print(e)
-        return None
+        raise ValueError('Songs not found')
 
     return list_songs
